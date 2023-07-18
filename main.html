@@ -9,7 +9,26 @@
 <body>	
 	<script>
 		function secondHighest(arr) {
-			//Write your code here
+			if (arr.length < 2 || new Set(arr).size === 1) {
+    return -Infinity;
+  }
+			  let max = -Infinity;
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] > max) {
+      max = arr[i];
+    }
+  }
+
+  // Find the second highest element
+  let secondHighest = -Infinity;
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] !== max && arr[i] > secondHighest) {
+      secondHighest = arr[i];
+    }
+  }
+
+  return secondHighest;
+			}
 			
 		}
 
